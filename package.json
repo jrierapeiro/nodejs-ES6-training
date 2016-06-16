@@ -1,0 +1,21 @@
+{
+  "name": "nodejses6",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node --harmony app.js",
+    "postinstall": "bower install",
+    "test": "./node_modules/.bin/_mocha tests"
+  },
+  "dependencies": {
+    "bower": "^1.7.9"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3",
+    "sinon": "^1.17.0"
+  }
+}
