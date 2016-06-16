@@ -2,7 +2,7 @@ var sinon = require('sinon');
 var chai = require('chai');
 var expect = chai.expect;
 
-describe('block 1', function () {
+describe('let, const and block scoping', function () {
     'use strict';
     const DEFAULT_PRODUCT_ID = 12;
 

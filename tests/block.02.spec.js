@@ -2,7 +2,7 @@ var sinon = require('sinon');
 var chai = require('chai');
 var expect = chai.expect;
 
-describe('block 2', function () {
+describe('arrow functions', function () {
     'use strict';
     const DEFAULT_PRODUCT_ID = 12;
 
@@ -71,6 +71,25 @@ describe('block 2', function () {
 
         var invoice2 = { number: 456 };
 
+        // You cannot bind an obejct to an arrow function. It doesn't change the context
         expect(invoice.process().bind(invoice2)()).to.be.equal(123);   
+    });
+
+    it('arrow function should keep the original context even when it is called with other object', function(){
+        var invoice = {
+            number: 123,
+            process: function () {
+                return () => this.number;
+            }
+        };
+
+        var invoice2 = { number: 456 };
+        
+        expect(invoice.process().call(invoice2)).to.be.equal(123);   
+    });
+
+     it('arrow function has no prototype', function(){
+         var getPrice = (count, tax) => count * 5 + tax;
+        expect(getPrice.hasOwnProperty('prototype')).to.be.equal(false);        
     });
 });
