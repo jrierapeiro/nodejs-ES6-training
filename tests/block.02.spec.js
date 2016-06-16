@@ -1,20 +1,11 @@
-var sinon = require('sinon');
 var chai = require('chai');
 var expect = chai.expect;
 
 describe('arrow functions', function () {
     'use strict';
     const DEFAULT_PRODUCT_ID = 12;
-
-    var tester;
-    beforeEach(function () {
-       tester = {
-           handler : function(value)
-           { 
-               // console.log(value);
-           }
-        };
-       sinon.spy(tester, 'handler');  
+   
+    beforeEach(function () {      
     });
 
     it('basic of arrow function', function(){
